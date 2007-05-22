@@ -3,8 +3,8 @@
 ;; Copyright (C) 2006, 2007 Qichen Huang
 ;;
 ;; Author: Qichen Huang <jasonal00@gmail.com>
-;; Time-stamp: <2007-05-14 00:11:45>
-;; Version: v0.64
+;; Time-stamp: <2007-05-23 00:13:49>
+;; Version: v0.65
 ;; Keywords: coding-system, auto-coding-functions
 ;; X-URL: http://jasonal.blogspot.com/2007/02/unicadel.html
 
@@ -80,6 +80,7 @@
 ;; http://www.mozilla.org/projects/intl/ChardetInterface.htm
 ;;
 ;; Changelog
+;; v0.65 fixed a bug in `unicad-gbkcht-analyser'
 ;; v0.64 add support for traditional chinese encoded in gbk
 ;; v0.63 changed the threhold in unicad-dist-table-get-confidence
 ;; v0.62 allow esc(0x1B) as legal value in utf-8, gb18030, sjis, big5, euckr
@@ -992,9 +993,10 @@ no validation needed here.  State machine has done that"
 (defun unicad-gbkcht-analyser (ch0 ch1)
   "we convert the gbk code into big5, than use `unicad-big5-analyser' to get the order"
   (let ((bar (encode-coding-char (decode-char 'chinese-gbk (+ (* 256 ch0) ch1)) 'big5)))
-    (let ((chr0 (string-to-char (substring bar 0)))
-          (chr1 (string-to-char (substring bar 1))))
-      (unicad-big5-analyser chr0 chr1))))
+    (if bar
+        (let ((chr0 (string-to-char (substring bar 0)))
+              (chr1 (string-to-char (substring bar 1))))
+          (unicad-big5-analyser chr0 chr1)))))
 
 ;;;}}}
 
