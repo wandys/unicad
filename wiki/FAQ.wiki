@@ -44,6 +44,5 @@ process.
   * optimized for detecting shorter text files.
   * add support for Central European Languages, that use iso-8859-2 coding system.
   * add support for Traditional Chinese that uses gbk coding system.
-  * add support for Simplified Chinese that uses big5 coding system.
   * add support for single byte only katakana that uses sjis coding system.
   * ability of detecting utf-16le and utf-16be without signature.
