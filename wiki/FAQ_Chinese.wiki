@@ -13,12 +13,12 @@ Unicad 可以帮助 Emacs 在打开文件的时候猜测语言编码，用正确
   * 繁体中文 (big5, gb18030, gbk, euc-tw)
   * 日语 (sjis, euc-jp, iso-2022-jp)
   * 韩语 (euc-kr, iso-2022-kr)
-  * 包含或不包含BOM的ucs2编码(utf-16le, utf-16be)
   * 希腊语 (iso-8859-7, windows-1253)
   * 俄语 (iso-8859-5, windows-1251, koi8-r, ibm855)
   * 保加利亚语 (iso-8859-5, windows-1251)
   * 西欧语言，如德语、法语、西班牙语、意大利语、挪威语、瑞典语、葡萄牙语等等 (latin-1)
   * 中欧语言，如波兰语、罗马尼亚语、斯洛伐克语、斯洛文尼亚语、捷克语等等 (latin-2)
+  * Unicode (utf-8, 包含或不包含BOM的ucs2编码utf-16le, utf-16be)
 
 == 谁应该使用 Unicad? ==
 
